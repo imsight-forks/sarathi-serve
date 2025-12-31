@@ -99,8 +99,14 @@ class ModelConfig:
         return self.hf_config.hidden_size
 
     def get_head_size(self) -> int:
-        # FIXME(woosuk): This may not be true for all models.
-        return self.hf_config.hidden_size // self.hf_config.num_attention_heads
+        head_dim = getattr(self.hf_config, "head_dim", None)
+        if head_dim is not None:
+            return int(head_dim)
+        head_size = getattr(self.hf_config, "head_size", None)
+        if head_size is not None:
+            return int(head_size)
+        # Fallback for models that don't explicitly specify head dim.
+        return int(self.hf_config.hidden_size // self.hf_config.num_attention_heads)
 
     def get_num_kv_heads(self, parallel_config: "ParallelConfig") -> int:
         # For GPTBigCode & Falcon:

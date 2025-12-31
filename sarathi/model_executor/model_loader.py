@@ -20,6 +20,7 @@ _MODEL_REGISTRY = {
     "MistralForCausalLM": MistralForCausalLM,
     "MixtralForCausalLM": MixtralForCausalLM,
     "QWenLMHeadModel": QWenLMHeadModel,
+    "Qwen3ForCausalLM": Qwen3ForCausalLM,
     "YiForCausalLM": YiForCausalLM,
 }
 

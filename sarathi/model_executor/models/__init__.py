@@ -4,12 +4,14 @@ from sarathi.model_executor.models.llama import LlamaForCausalLM
 from sarathi.model_executor.models.mistral import MistralForCausalLM
 from sarathi.model_executor.models.mixtral import MixtralForCausalLM
 from sarathi.model_executor.models.qwen import QWenLMHeadModel
+from sarathi.model_executor.models.qwen3 import Qwen3ForCausalLM
 from sarathi.model_executor.models.yi import YiForCausalLM
 
 __all__ = [
     "LlamaForCausalLM",
     "YiForCausalLM",
     "QWenLMHeadModel",
+    "Qwen3ForCausalLM",
     "MistralForCausalLM",
     "MixtralForCausalLM",
     "FalconForCausalLM",
